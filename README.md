@@ -1,68 +1,77 @@
-# Proyecto de Backend Flask con SQLAlchemy y JWT
+# Flask Backend Project with SQLAlchemy and JWT 🚀
 
-Este proyecto implementa un backend Flask con SQLAlchemy para la gestión de una base de datos MySQL y autenticación JWT.
+This project implements a Flask backend with SQLAlchemy for managing a MySQL database and JWT authentication.
 
-## Configuración del Entorno
+## Table of Contents
 
-1. **Instalación de Python**: Asegúrate de tener Python instalado en tu sistema. Puedes descargarlo desde [python.org](https://www.python.org/).
+- [Installation](#installation)
+- [Usage](#usage)
+- [Endpoints](#endpoints)
+- [Environment Variables](#environment-variables)
+- [License](#license)
 
-2. **Configuración del Entorno Virtual**: Se recomienda crear un entorno virtual para este proyecto. Puedes hacerlo ejecutando los siguientes comandos:
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+     cd <project-directory>
+   ```
+
+3. Set up a virtual environment:
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # Para sistemas Unix
-   # venv\Scripts\activate  # Para sistemas Windows
+   source venv/bin/activate  # For Unix systems
    ```
 
-3. **Instalación de Dependencias**: Instala las dependencias necesarias ejecutando:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # For Windows systems
+   ```
+
+4. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## Configuración de la Base de Datos
+## Usage
 
-1. **Configuración de MySQL**: Asegúrate de tener un servidor MySQL instalado y configurado en tu sistema o usa un servicio en la nube como [ClearDB](https://www.cleardb.com/).
-
-2. **Configuración de la Base de Datos**: Define la URL de conexión a la base de datos en el archivo `config.py`:
-
-   ```python
-   SQLALCHEMY_DATABASE_URI = 'mysql://usuario:contraseña@localhost/nombre_base_de_datos'
-   ```
-
-## Ejecución de Migraciones de Base de Datos
-
-1. **Inicialización de Migraciones**: Inicia las migraciones de base de datos ejecutando:
-
-   ```bash
-   flask db init
-   ```
-
-2. **Generación de Migraciones**: Genera las migraciones iniciales con el siguiente comando:
-
-   ```bash
-   flask db migrate -m "Migración inicial"
-   ```
-
-3. **Aplicación de Migraciones**: Aplica las migraciones a la base de datos ejecutando:
-
-   ```bash
-   flask db upgrade
-   ```
-
-## Ejecución del Servidor
-
-Para ejecutar el servidor, simplemente corre el archivo `app.py`:
+To run the application, use the following command:
 
 ```bash
 python app.py
 ```
 
-## Endpoints Disponibles
+The application will start running on `http://localhost:5000`.
 
-- `/auth/login`: Ruta para el inicio de sesión y obtención del token JWT.
-- `/auth/protected`: Ruta protegida que requiere un token JWT válido para acceder.
+## Endpoints
 
-## Licencia
+Below are the available endpoints:
 
-Este proyecto está bajo la licencia [MIT](LICENSE).
+- `{serverip}/api/users`: GET (Get all users), POST (Create a new user)
+- `{serverip}/api/users/<user_id>`: GET (Get a specific user), PUT (Update a specific user), DELETE (Delete a specific user)
+- `{serverip}/api/users/register`: POST (Register a new user)
+- `{serverip}/api/nutritionists`: GET (Get all nutritionists), POST (Create a new nutritionist)
+- `{serverip}/api/nutritionists/<nutritionist_id>`: GET (Get a specific nutritionist), PUT (Update a specific nutritionist), DELETE (Delete a specific nutritionist)
+- `{serverip}/api/nutritionists/register`: POST (Register a new nutritionist)
+- `{serverip}/api/comments`: GET (Get all comments), POST (Create a new comment)
+- `{serverip}/api/comments/<comment_id>`: GET (Get a specific comment), PUT (Update a specific comment), DELETE (Delete a specific comment)
+- `{serverip}/api/professional_tips`: GET (Get all professional tips), POST (Create a new professional tip)
+- `{serverip}/api/professional_tips/<professional_tip_id>`: GET (Get a specific professional tip), PUT (Update a specific professional tip), DELETE (Delete a specific professional tip)
+- `{serverip}/api/login`: POST (User login)
+
+## Environment Variables
+
+- `SECRET_KEY`: Secret key for Flask app
+- `JWT_SECRET_KEY`: Secret key for JWT token
+- `DATABASE_URL`: URL for the database (example for Xampp, `mysql+pymysql://root@localhost/flask-jwt-flutter`)
+
+Make sure to set up these environment variables before running the application.

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask-JWT</title>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+  </head>
+  <body>
+    <h1>Flask Backend Project with SQLAlchemy and JWT 🚀</h1>
+    <p>
+      This project implements a Flask backend with SQLAlchemy for managing a
+      MySQL database and JWT authentication.
+    </p>
+    <h2>My GitHub Profile 🌟</h2>
+    <p>
+      <a href="https://github.com/soymatta">Yassed Matta | soymatta </a>
+    </p>
+    <h2>Endpoints</h2>
+    <p>Below are the available endpoints:</p>
+    <ul>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/users</code><br />
+        👤 | GET (Get all users), POST (Create a new user)
+      </li>
+      <li>
+        <code
+          >https://flask-jwt-flutter.onrender.com/api/users/&lt;user_id&gt;</code
+        ><br />
+        👤 | GET (Get a specific user), PUT (Update a specific user), DELETE
+        (Delete a specific user)
+      </li>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/users/register</code
+        ><br />
+        📝 | POST (Register a new user)
+      </li>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/nutritionists</code
+        ><br />
+        🥦 | GET (Get all nutritionists), POST (Create a new nutritionist)
+      </li>
+      <li>
+        <code
+          >https://flask-jwt-flutter.onrender.com/api/nutritionists/&lt;nutritionist_id&gt;</code
+        ><br />
+        🥦 | GET (Get a specific nutritionist), PUT (Update a specific
+        nutritionist), DELETE (Delete a specific nutritionist)
+      </li>
+      <li>
+        <code
+          >https://flask-jwt-flutter.onrender.com/api/nutritionists/register</code
+        ><br />
+        📝 | POST (Register a new nutritionist)
+      </li>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/comments</code><br />
+        💬 | GET (Get all comments), POST (Create a new comment)
+      </li>
+      <li>
+        <code
+          >https://flask-jwt-flutter.onrender.com/api/comments/&lt;comment_id&gt;</code
+        ><br />
+        💬 | GET (Get a specific comment), PUT (Update a specific comment),
+        DELETE (Delete a specific comment)
+      </li>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/professional_tips</code
+        ><br />
+        💼 | GET (Get all professional tips), POST (Create a new professional
+        tip)
+      </li>
+      <li>
+        <code
+          >https://flask-jwt-flutter.onrender.com/api/professional_tips/&lt;professional_tip_id&gt;</code
+        ><br />
+        💼 | GET (Get a specific professional tip), PUT (Update a specific
+        professional tip), DELETE (Delete a specific professional tip)
+      </li>
+      <li>
+        <code>https://flask-jwt-flutter.onrender.com/api/login</code><br />
+        🔑 | POST (User login)
+      </li>
+    </ul>
+    <h2>Request Body</h2>
+    <p>JSON structure for objects (Some requests require JWT Auth):</p>
+    <ul>
+      <li>
+        <b>👤 | USER</b><br />
+        <pre><code>{
+"name": "Test User",
+"username": "test_user",
+"password": "password123"
+}</code></pre>
+      </li>
+      <li>
+        <b>🥦 | NUTRITIONIST</b><br />
+        <pre><code>{
+"name": "Test Nutritionist",
+"username": "test_nutri",
+"email": "test_nutri@example.com",
+"password": "password123",
+"description": "Description of test nutritionist",
+"rating": 5.0,
+"photo": "URL of nutritionist's photo",
+"instagram": "instagram_account",
+"website": "nutritionist_website",
+"whatsapp": "whatsapp_number",
+"skill1": "Skill 1",
+"skill2": "Skill 2",
+"skill3": "Skill 3"
+}</code></pre>
+      </li>
+      <li>
+        <b>💬 | COMMENT</b><br />
+        <pre><code>{
+"content": "This is a test comment",
+"photo": "URL_of_the_photo",
+"timestamp": "2024-05-17 12:00:00",
+"user_id": "ID_of_previously_created_user"
+}</code></pre>
+      </li>
+      <li>
+        <b>💼 | PROFESSIONAL TIP</b><br />
+        <pre><code>{
+"title": "Test Tip",
+"content": "This is a test professional tip",
+"nutritionist_id": "ID_of_previously_created_nutritionist"
+}</code></pre>
+      </li>
+    </ul>
+  </body>
+</html>

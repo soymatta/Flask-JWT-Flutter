@@ -1,4 +1,5 @@
 from db.db import db, app, migrate, jwt
+from flask import Flask, render_template
 
 # Importa los modelos
 from models.user import User
@@ -21,9 +22,14 @@ app.register_blueprint(professional_tip_api, url_prefix="/api")
 app.register_blueprint(auth_api, url_prefix="/api")
 
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
 if __name__ == "__main__":
     app.run(
-        host="0.0.0.0",  # Listen on all network interfaces
-        port=5000,  # Default port
-        # debug=True      # Enable debug mode for easier debugging
+        # host="0.0.0.0",  # Listen on all network interfaces
+        # port=5000,  # Default port
+        debug=True  # Enable debug mode for easier debugging
     )
