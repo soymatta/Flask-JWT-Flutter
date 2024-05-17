@@ -14,13 +14,45 @@
     <h1>Flask Backend Project with SQLAlchemy and JWT 🚀</h1>
     <p>
       This project implements a Flask backend with SQLAlchemy for managing a
-      MySQL database and JWT authentication.
+      PostgreSQL database and JWT authentication.
     </p>
     <h2>My GitHub Profile 🌟</h2>
     <p>
       <a href="https://github.com/soymatta">Yassed Matta | soymatta </a>
     </p>
-    <h2>Endpoints</h2>
+    <h2>JWT guide 📜</h2>
+    <p>
+      This is the guide about how to get JTW for the authenticated requests:
+    </p>
+    <ol>
+      <li>
+        If you don't know any user and password, you have to register a new user
+      </li>
+
+      <ul>
+        <li>
+          <code>https://flask-jwt-flutter.onrender.com/api/users/register</code
+          ><br />
+          📝 | POST (Register a new user)
+        </li>
+        <li>
+          <code
+            >https://flask-jwt-flutter.onrender.com/api/nutritionists/register</code
+          ><br />
+          📝 | POST (Register a new nutritionist)
+        </li>
+      </ul>
+
+      <li>If you have a user and password, you have to login to get the JWT</li>
+      <ul>
+        <li>
+          <code>https://flask-jwt-flutter.onrender.com/api/login</code><br />
+          🔑 | POST (User or Nutritionist login)
+        </li>
+      </ul>
+    </ol>
+
+    <h2>Endpoints 📡</h2>
     <p>Below are the available endpoints:</p>
     <ul>
       <li>
@@ -35,11 +67,6 @@
         (Delete a specific user)
       </li>
       <li>
-        <code>https://flask-jwt-flutter.onrender.com/api/users/register</code
-        ><br />
-        📝 | POST (Register a new user)
-      </li>
-      <li>
         <code>https://flask-jwt-flutter.onrender.com/api/nutritionists</code
         ><br />
         🥦 | GET (Get all nutritionists), POST (Create a new nutritionist)
@@ -50,12 +77,6 @@
         ><br />
         🥦 | GET (Get a specific nutritionist), PUT (Update a specific
         nutritionist), DELETE (Delete a specific nutritionist)
-      </li>
-      <li>
-        <code
-          >https://flask-jwt-flutter.onrender.com/api/nutritionists/register</code
-        ><br />
-        📝 | POST (Register a new nutritionist)
       </li>
       <li>
         <code>https://flask-jwt-flutter.onrender.com/api/comments</code><br />
@@ -81,12 +102,8 @@
         💼 | GET (Get a specific professional tip), PUT (Update a specific
         professional tip), DELETE (Delete a specific professional tip)
       </li>
-      <li>
-        <code>https://flask-jwt-flutter.onrender.com/api/login</code><br />
-        🔑 | POST (User login)
-      </li>
     </ul>
-    <h2>Request Body</h2>
+    <h2>Request Body 🏗</h2>
     <p>JSON structure for objects (Some requests require JWT Auth):</p>
     <ul>
       <li>
