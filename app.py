@@ -22,4 +22,6 @@ app.register_blueprint(auth_api, url_prefix="/api")
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(
+        # Delete comment if you want a development server # debug=True
+    )
