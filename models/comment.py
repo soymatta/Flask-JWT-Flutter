@@ -1,5 +1,5 @@
 import uuid
-from sqlalchemy.dialects.mysql import CHAR, TEXT, VARCHAR, DATETIME
+from sqlalchemy.dialects.mysql import CHAR, TEXT, VARCHAR, TIMESTAMP
 from flask_sqlalchemy import SQLAlchemy
 from db.db import app, db
 
@@ -10,7 +10,7 @@ class Comment(db.Model):
     id = db.Column(CHAR(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     content = db.Column(TEXT, nullable=False)
     photo = db.Column(VARCHAR(255))
-    timestamp = db.Column(DATETIME, nullable=False)
+    timestamp = db.Column(TIMESTAMP, nullable=False)
     user_id = db.Column(CHAR(36), db.ForeignKey("users.id"), nullable=False)
 
     def serialize(self):
