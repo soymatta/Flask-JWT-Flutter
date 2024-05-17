@@ -1,0 +1,17 @@
+# Ignorar archivos y directorios generados por Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar archivos y directorios del entorno virtual
+venv/
+env/
+
+# Ignorar archivos y directorios del IDE
+.vscode/
+.idea/
+
+# Ignorar archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
