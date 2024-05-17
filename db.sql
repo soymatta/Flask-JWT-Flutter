@@ -14,6 +14,7 @@ CREATE TABLE users (
 CREATE TABLE nutritionists (
     id CHAR(36) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     description TEXT,
@@ -58,11 +59,11 @@ INSERT INTO users (id, name, username, password) VALUES
 (UUID(), 'fitlife', 'EntuFitness', 'password');
 
 -- Insertar datos en la tabla nutritionists
-INSERT INTO nutritionists (id, name, email, password, description, rating, photo, instagram, website, whatsapp, skill1, skill2, skill3) VALUES 
-(UUID(), 'Dr. Marlon José', 'melo.jose@example.com', 'password', 'Nutritionist specialized in personalized diets to improve health and physical performance.', 4.5, 'assets/imgs/dr_1.jpg', 'melojose_nutri', 'www.melojose.com', '+573045360092', 'Diet planning', NULL, NULL),
-(UUID(), 'Dr. Matta', 'matta@example.com', 'password', 'Expert in sports nutrition and weight loss. I help my patients achieve their goals.', 4.8, 'assets/imgs/dr_2.jpg', 'dr_matta_nutri', 'www.drmatta.com', '+573045364492', 'Sports nutrition', 'Weight loss', NULL),
-(UUID(), 'Dr. Smith', 'dr.smith@example.com', 'password', 'Child specialist. I help parents provide healthy nutrition for their children.', 4.2, 'assets/imgs/dr_3.jpg', 'drasmith_nutri', 'www.drasmithnutrition.com', '+573045376890', 'Child nutrition', NULL, NULL),
-(UUID(), 'Dra. García', 'dra.garcia@example.com', 'password', 'Dietitian expert in weight control and improvement of eating habits. Together we will achieve your goals!', 4.6, 'assets/imgs/dr_4.jpg', NULL, 'www.licgarcia.com', NULL, 'Weight control', 'Diet planning', 'Eating habits');
+INSERT INTO nutritionists (id, name, username, email, password, description, rating, photo, instagram, website, whatsapp, skill1, skill2, skill3) VALUES 
+(UUID(), 'Dr. Marlon José', 'melojose', 'melo.jose@example.com', 'password', 'Nutritionist specialized in personalized diets to improve health and physical performance.', 4.5, 'assets/imgs/dr_1.jpg', 'melojose_nutri', 'www.melojose.com', '+573045360092', 'Diet planning', NULL, NULL),
+(UUID(), 'Dr. Matta', 'dr_matta_nutri', 'matta@example.com', 'password', 'Expert in sports nutrition and weight loss. I help my patients achieve their goals.', 4.8, 'assets/imgs/dr_2.jpg', 'dr_matta_nutri', 'www.drmatta.com', '+573045364492', 'Sports nutrition', 'Weight loss', NULL),
+(UUID(), 'Dr. Smith', 'drasmith_nutri', 'dr.smith@example.com', 'password', 'Child specialist. I help parents provide healthy nutrition for their children.', 4.2, 'assets/imgs/dr_3.jpg', 'drasmith_nutri', 'www.drasmithnutrition.com', '+573045376890', 'Child nutrition', NULL, NULL),
+(UUID(), 'Dra. García', 'licgarcia', 'dra.garcia@example.com', 'password', 'Dietitian expert in weight control and improvement of eating habits. Together we will achieve your goals!', 4.6, 'assets/imgs/dr_4.jpg', NULL, 'www.licgarcia.com', NULL, 'Weight control', 'Diet planning', 'Eating habits');
 
 -- Insertar datos en la tabla comments
 INSERT INTO comments (id, content, photo, timestamp, user_id) VALUES 
