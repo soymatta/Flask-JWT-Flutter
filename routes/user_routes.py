@@ -60,6 +60,15 @@ def delete_user(user_id):
 @user_api.route("/users/register", methods=["POST"])
 def register_user():
     data = request.json
+
+    fields = ["name", "username"]
+    for field in fields:
+        if User.query.filter_by(**{field: data.get(field)}).first():
+            return (
+                jsonify({"error": f"User with {field} already exists"}),
+                400,
+            )
+
     new_user = User(**data)
     db.session.add(new_user)
     db.session.commit()

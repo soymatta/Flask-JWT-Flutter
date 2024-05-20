@@ -76,6 +76,15 @@ def delete_nutritionist(nutritionist_id):
 @nutritionist_api.route("/nutritionists/register", methods=["POST"])
 def register_nutritionist():
     data = request.json
+
+    fields = ["name", "username", "email", "instagram"]
+    for field in fields:
+        if Nutritionist.query.filter_by(**{field: data.get(field)}).first():
+            return (
+                jsonify({"error": f"Nutritionist with {field} already exists"}),
+                400,
+            )
+
     new_nutritionist = Nutritionist(**data)
     db.session.add(new_nutritionist)
     db.session.commit()

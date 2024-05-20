@@ -8,14 +8,14 @@ class Nutritionist(db.Model):
     __tablename__ = "nutritionists"
 
     id = db.Column(CHAR(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    name = db.Column(VARCHAR(255), nullable=False)
+    name = db.Column(VARCHAR(255), unique=True, nullable=False)
     username = db.Column(VARCHAR(50), unique=True, nullable=False)
     email = db.Column(VARCHAR(255), unique=True, nullable=False)
     password = db.Column(VARCHAR(255), nullable=False)
     description = db.Column(TEXT)
     rating = db.Column(DECIMAL(2, 1), nullable=False, server_default="1.0")
     photo = db.Column(VARCHAR(255))
-    instagram = db.Column(VARCHAR(20))
+    instagram = db.Column(VARCHAR(20), unique=True)
     website = db.Column(VARCHAR(100))
     whatsapp = db.Column(VARCHAR(15))
     skill1 = db.Column(VARCHAR(50), nullable=False)

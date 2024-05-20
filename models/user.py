@@ -8,7 +8,7 @@ class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(CHAR(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    name = db.Column(VARCHAR(255), nullable=False)
+    name = db.Column(VARCHAR(255), unique=True, nullable=False)
     username = db.Column(VARCHAR(50), unique=True, nullable=False)
     password = db.Column(VARCHAR(255), nullable=False)
 
