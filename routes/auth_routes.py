@@ -5,7 +5,10 @@ from models import User, Nutritionist
 
 auth_api = Blueprint("auth_api", __name__)
 
+# CRUD
 
+
+# LOGIN FOR USERS AND NUTRITIONISTS
 @auth_api.route("/login", methods=["POST"])
 def login():
     data = request.json
