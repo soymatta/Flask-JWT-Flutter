@@ -5,7 +5,7 @@ from flask_jwt_extended import jwt_required
 
 nutritionist_api = Blueprint("nutritionist_api", __name__)
 
-# RUTAS CRUD
+# CRUD
 
 
 # GET NUTRITIONISTS
@@ -30,16 +30,6 @@ def get_nutritionist(nutritionist_id):
             ),
             404,
         )
-
-
-# CREATE NUTRITIONIST
-@nutritionist_api.route("/nutritionists", methods=["POST"])
-def create_nutritionist():
-    data = request.json
-    new_nutritionist = Nutritionist(**data)
-    db.session.add(new_nutritionist)
-    db.session.commit()
-    return jsonify(new_nutritionist.serialize()), 201
 
 
 # UPDATE NUTRITIONIST

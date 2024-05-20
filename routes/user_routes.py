@@ -6,7 +6,7 @@ from flask_jwt_extended import jwt_required
 
 user_api = Blueprint("user_api", __name__)
 
-# RUTAS CRUD
+# CRUD
 
 
 # GET USERS
@@ -26,16 +26,6 @@ def get_user(user_id):
         return jsonify(user.serialize())
     else:
         return jsonify({"error": "User with id {} not found".format(user_id)}), 404
-
-
-# CREATE USER
-@user_api.route("/users", methods=["POST"])
-def create_user():
-    data = request.json
-    new_user = User(**data)
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify(new_user.serialize()), 201
 
 
 # UPDATE USER
