@@ -17,9 +17,14 @@ def login():
 
     if user and user.password == password:
         access_token = create_access_token(identity=user.id)
-        return jsonify(access_token=access_token, type="user"), 200
+        return jsonify(access_token=access_token, type="user", user_id=user.id), 200
     elif nutritionist and nutritionist.password == password:
         access_token = create_access_token(identity=nutritionist.id)
-        return jsonify(access_token=access_token, type="nutritionist"), 200
+        return (
+            jsonify(
+                access_token=access_token, type="nutritionist", user_id=nutritionist.id
+            ),
+            200,
+        )
     else:
         return jsonify({"error": "Invalid credentials"}), 401
