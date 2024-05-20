@@ -8,7 +8,6 @@ This project implements a Flask backend with SQLAlchemy for managing a PostgreSQ
 - [Usage](#usage)
 - [Endpoints](#endpoints)
 - [Environment Variables](#environment-variables)
-- [License](#license)
 
 ## Installation
 
