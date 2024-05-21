@@ -27,6 +27,7 @@ class Nutritionist(db.Model):
             "id": self.id,
             "name": self.name,
             "username": self.username,
+            "password": self.password,
             "email": self.email,
             "description": self.description,
             "rating": self.rating,
