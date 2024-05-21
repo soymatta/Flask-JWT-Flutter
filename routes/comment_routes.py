@@ -11,7 +11,7 @@ comment_api = Blueprint("comment_api", __name__)
 # GET COMMENTS
 @comment_api.route("/comments", methods=["GET"])
 def get_comments():
-    comments = Comment.query.all()
+    comments = Comment.query.order_by(Comment.timestamp.desc()).all()
     return jsonify([comment.serialize() for comment in comments])
 
 
