@@ -71,6 +71,6 @@ Below are the available endpoints:
 
 - `SECRET_KEY`: Secret key for Flask app
 - `JWT_SECRET_KEY`: Secret key for JWT token
-- `DATABASE_URL`: URL for the database (example for Xampp, `PostgreSQL+pyPostgreSQL://root@localhost/flask-jwt-flutter`)
+- `DATABASE_URL`: URL for the database (example for Xampp, `mysql+pymysql://root@localhost/flask-jwt-flutter`)
 
 Make sure to set up these environment variables before running the application.
