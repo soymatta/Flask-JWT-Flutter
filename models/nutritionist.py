@@ -14,7 +14,7 @@ class Nutritionist(db.Model):
     password = db.Column(VARCHAR(255), nullable=False)
     description = db.Column(TEXT)
     rating = db.Column(DECIMAL(2, 1), nullable=False, server_default="1.0")
-    photo = db.Column(VARCHAR(255))
+    photo = db.Column(TEXT)
     instagram = db.Column(VARCHAR(20), unique=True)
     website = db.Column(VARCHAR(100))
     whatsapp = db.Column(VARCHAR(15))

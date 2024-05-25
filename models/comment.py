@@ -9,7 +9,7 @@ class Comment(db.Model):
 
     id = db.Column(CHAR(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     content = db.Column(TEXT, nullable=False)
-    photo = db.Column(VARCHAR(255))
+    photo = db.Column(TEXT)
     timestamp = db.Column(TIMESTAMP, nullable=False)
     user_id = db.Column(CHAR(36), db.ForeignKey("users.id"), nullable=False)
 
