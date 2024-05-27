@@ -1,11 +1,16 @@
 from flask import Blueprint, jsonify, request
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, jwt_required
 from db.db import db, app, migrate, jwt
 from models import User, Nutritionist
 
 auth_api = Blueprint("auth_api", __name__)
 
-# CRUD
+
+# VALIDATE TOKEN
+@auth_api.route("/token", methods=["GET"])
+@jwt_required()
+def validate_token():
+    return jsonify({"valid": True}), 200
 
 
 # LOGIN FOR USERS AND NUTRITIONISTS
